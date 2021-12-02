@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All people</title>
+</head>
+<body>
+    <main>
+        <% people.forEach(person => { %>
+            <%- include("../components/card", {
+                title: `${person.name} ${person.lastname}`,
+                content: `This person is ${person.age} years old`,
+                titleLinkTo: `/views/person/${person.id}`
+            }) %> 
+        <% }) %>
+    </main>
+</body>
+</html>
