@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include("../partials/head", {title: `Person | ${person.name} ${person.lastname}`}) %> 
+    </head>
+    <body>
+        <main>
+            <form action="/person/update" method="POST">
+                <%- include("../components/field", {
+                    name: "name",
+                    label: "Name",
+                    type: "text",
+                    value: person.name,
+                    required: true
+                }) %>
+
+                <%- include("../components/field", {
+                    name: "lastname",
+                    label: "Lastname",
+                    type: "text",
+                    value: person.lastname,
+                    required: true
+                }) %>
+
+                <%- include("../components/field", {
+                    name: "age",
+                    label: "Age",
+                    type: "number",
+                    value: person.age,
+                    required: true
+                }) %>
+
+                <input name="id" type="hidden" value="<%= person.id %>" />
+
+                <button type="submit">Save</button>
+            </form>
+        </main>
+    </body>
+</html>

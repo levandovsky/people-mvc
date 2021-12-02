@@ -6,7 +6,11 @@
             <%= title %>
         <% } %>
          
-    </div>
+        <% if (deleteLink) { %>
+            <form action="<%= deleteLink %>" method="post" style="display: inline;">
+                <button type="submit">x</button>
+            </form>
+        <% } %>
 
     <div class="card__content">
         <%= content %> 

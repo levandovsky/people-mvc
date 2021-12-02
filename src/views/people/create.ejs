@@ -1,0 +1,28 @@
+<h3>Create new person</h3>
+<form action="/" method="POST">
+    <%- include("../components/field", {
+        name: "name",
+        label: "Name",
+        type: "text",
+        value: "",
+        required: true
+    }) %>
+
+    <%- include("../components/field", {
+        name: "lastname",
+        label: "Lastname",
+        type: "text",
+        value: "",
+        required: true
+    }) %>
+
+    <%- include("../components/field", {
+        name: "age",
+        label: "Age",
+        type: "number",
+        value: "",
+        required: true
+    }) %>
+
+    <button type="submit">Add</button>
+</form>
